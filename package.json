@@ -1,0 +1,24 @@
+{
+  "name": "everything-about-react",
+  "version": "1.0.0",
+  "description": "This is Awesome",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surajpradhank/everything-about-react.git"
+  },
+  "keywords": [
+    "react",
+    "Suraj",
+    "Pradhan"
+  ],
+  "author": "Suraj Pradhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surajpradhank/everything-about-react/issues"
+  },
+  "homepage": "https://github.com/surajpradhank/everything-about-react#readme"
+}
