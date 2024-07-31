@@ -26,4 +26,6 @@
 # Command
  - npx parcel index.html -> create **.parcel-cache** folder and create a **localhost server** to run the application
  - npx parcel build index.html -> create a production build inside **dist** folder.
+ -  Now instead of writting npx parcel command repetedly, we can make changes with **scripts in package.json** .
+  Ex - *npx parcel index.html* will be changes to *npm run start* or *npm start*
   
