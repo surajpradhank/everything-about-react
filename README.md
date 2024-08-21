@@ -28,4 +28,48 @@
  - npx parcel build index.html -> create a production build inside **dist** folder.
  -  Now instead of writting npx parcel command repetedly, we can make changes with **scripts in package.json** .
   Ex - *npx parcel index.html* will be changes to *npm run start* or *npm start*
+
+
+# Tasky Kitchn
+ /**
+ * * header
+ *  - Logo
+ *  - Nav Items
+ * * Body
+ *  - Search
+ *  - Resturant Container
+ *    - Resturant Card
+ * * Footer
+ *  -Copyright
+ */
   
+# Two types of Export/Import
+
+- Defailt Export/Import
+  
+  export default componenent
+  import component from "path"
+
+- named Export/Import
+
+  export const component
+  import { Component } from "path"
+
+# Hooks
+ Normal JS utility function
+
+ - **useState()** - state variables 
+    
+    * The useState Hook provides those two things:
+
+    * A state variable to retain the data between renders.
+    * A state setter function to update the variable and *trigger React to render the component again*.
+  
+    Example - const [index, setIndex] = useState(0);
+              index is a state variable and setIndex is the setter function.
+
+ - **useEffect()**
+  
+# Swiggy URL
+https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+
