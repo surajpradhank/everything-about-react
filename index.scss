@@ -14,12 +14,17 @@ $background-color_2: black;
   width: 100px;
   padding: 15px;
 }
+
+ul {
+  list-style-type: none;
+}
+
 .nav-items {
   > ul {
     display: flex;
     font-size: 20px;
     padding: 0px 20px;
-    list-style-type: none;
+
     > li {
       padding: 10px;
       margin: 10px;
@@ -82,4 +87,14 @@ $background-color_2: black;
   cursor: pointer;
   padding: 0 20px;
   font-weight: bold;
+}
+
+.res-menus {
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
 }

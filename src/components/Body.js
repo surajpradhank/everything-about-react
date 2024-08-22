@@ -4,14 +4,13 @@ import ResturantCard from "./ResturantCard";
 import resturantList from "../utils/mockdata"
 import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constant";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
     const [listOfRestaurant, setlistOfRestaurant] = useState([]); // for mock data use resturantList from above import
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
-
-    console.log("Rendered");
 
     useEffect(() => {
         fetchData();
@@ -22,7 +21,6 @@ const Body = () => {
         const data = await fetch(SWIGGY_URL)
         const json = await data.json();
 
-        console.log(json.data.cards[1]);
         const datapath = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
         setlistOfRestaurant(datapath);
@@ -59,7 +57,7 @@ const Body = () => {
             <div className="resturant-container">
                 {
                     filteredRestaurant.map((resturant) =>
-                        <ResturantCard key={resturant.info.id} resData={resturant} />
+                        <Link key={resturant.info.id} to={"/restaurants/" + resturant.info.id}><ResturantCard resData={resturant} /></Link>
                     )
                 }
             </div>
