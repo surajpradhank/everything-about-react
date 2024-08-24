@@ -5,6 +5,7 @@ import resturantList from "../utils/mockdata"
 import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 const Body = () => {
 
@@ -16,6 +17,12 @@ const Body = () => {
         fetchData();
     }, []);
 
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false) {
+        return <h1>OMG, You are offline !!!! Please be online , We are looking for you.</h1>
+    }
+
     const fetchData = async () => {
 
         const data = await fetch(SWIGGY_URL)
@@ -26,6 +33,8 @@ const Body = () => {
         setlistOfRestaurant(datapath);
         setFilteredRestaurant(datapath);
     };
+
+
 
     // Conditional Rendering
     return listOfRestaurant.length === 0 ? (<Shimmer />) : (

@@ -60,9 +60,7 @@ ul {
   color: $color_2;
   background-color: $background-color_2;
 }
-.contact {
-  display: flex;
-}
+
 .filter {
   display: flex;
   > .filter-btn,
@@ -92,6 +90,9 @@ ul {
 .res-menus {
   margin: 20px auto;
   max-width: 500px;
+  > ul {
+    display: contents;
+  }
 }
 
 .user-card {

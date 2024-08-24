@@ -71,5 +71,19 @@
  - **useEffect()**
   
 # Swiggy URL
-https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING 
 
+Menu URL
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=426730
+
+# Github URL
+https://api.github.com/users/surajpradhank
+
+# Lazy Loading
+Chunking
+Code Spliting
+Dynamic Bundling
+On Demand loading
+Dynamic import
+
+This concept is used to split code into smaller chunks which cen be loaded on demand which will improve hte performance in large scale applications

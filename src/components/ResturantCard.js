@@ -7,7 +7,7 @@ const ResturantCard = (props) => {
     const { resData } = props;
     const { cloudinaryImageId, name, cuisines, avgRatingString, costForTwo } = resData?.info;
     const { slaString } = resData?.info.sla;
-    //  console.log("card " + resData?.info?.id);
+
     return (
         <div className="resturant-card">
             <img

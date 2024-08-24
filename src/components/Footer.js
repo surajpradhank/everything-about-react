@@ -4,9 +4,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <p id="copyright">&copy; 2024 Tasky Kitchn Corporation</p>
-            <div className="contact">
-                <h5>Contant Us: +91-9404030353</h5>
-            </div>
+            <p>Contant Us: +91-9404030353</p>
         </div>
     );
 };
