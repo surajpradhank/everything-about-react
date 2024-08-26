@@ -2,7 +2,7 @@ import React from 'react'
 
 const Grocery = () => {
     return (
-        <div>Grocery Store. It might contain lot of child components</div>
+        <div className='m-5'>Grocery Store. It might contain lot of child components</div>
     )
 }
 

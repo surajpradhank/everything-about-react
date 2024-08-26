@@ -9,18 +9,18 @@ const Header = () => {
     useEffect(() => { }, []);
 
     return (
-        <div className="header">
+        <div className="flex justify-between shadow-md">
             <div className="logo-container">
-                <img className="logo" src={logo} alt="" />
+                <img className="w-28" src={logo} />
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About </Link></li>
-                    <li><Link to="/contact">Contant Us</Link></li>
-                    <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart </li>
-                    <button className="login" onClick={() => {
+            <div className="flex items-center">
+                <ul className="flex p-4 m-4">
+                    <li className="nav-li"><Link to="/">Home</Link></li>
+                    <li className="nav-li"><Link to="/about">About </Link></li>
+                    <li className="nav-li"><Link to="/contact">Contant Us</Link></li>
+                    <li className="nav-li"><Link to="/grocery">Grocery</Link></li>
+                    <li className="nav-li">Cart </li>
+                    <button className="nav-li login" onClick={() => {
                         btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")
                     }}>
                         {btnName}
