@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,17 +9,22 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
+import UserContext from "./utils/UserContext";
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const Applayout = () => {
+
+    //Now after authentication we got the real user, lets say User is Suraj Pradhan
+
+    const [username, setUserName] = useState("Suraj Pradhan")
+
     return (
-        <div>
+        <UserContext.Provider value={{ loggedInUser: username, setUserName }} >
             <div>
                 <Header />
                 <Outlet />
             </div>
-        </div>
+        </UserContext.Provider >
     );
 };
 

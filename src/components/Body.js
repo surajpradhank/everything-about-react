@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ResturantCard, { withHighestRatedLabel } from "./ResturantCard";
 import resturantList from "../utils/mockdata"
 import Shimmer from "./Shimmer";
@@ -7,7 +7,7 @@ import { SWIGGY_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus"
 import Footer from "../components/Footer";
-
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -16,6 +16,9 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     const RestaurantCardHighestRated = withHighestRatedLabel(ResturantCard);
+
+    // setUserName is comming from app.js and in body we are chaning the user name in body
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     console.log(listOfRestaurant);
     useEffect(() => {
@@ -43,9 +46,9 @@ const Body = () => {
     return listOfRestaurant.length === 0 ? (<Shimmer />) : (
         <>
             <div className="body">
-                <div className="filter flex">
+                <div className="flex">
                     <div className="search m-4 p-4">
-                        <input className=" placeholder:italic placeholder:text-slate-400 bg-white w-80  h-10 border border-slate-300 rounded-md py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-1" placeholder="Search for resturant..." type="text" value={searchText} onChange={(e) => {
+                        <input className="input-box" placeholder="Search for resturant..." type="text" value={searchText} onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />
                         <button className="bg-blue-400 hover:bg-blue-700 text-white font-medium px-4 py-2 m-2 rounded-lg" onClick={() => {
@@ -66,6 +69,12 @@ const Body = () => {
                         }}>Clear Filter</button>
                     </div>
 
+                    <div className="m-2 p-4 flex items-center">
+                        <label className="mx-2 font-semibold text-lg ">User Name</label>
+                        <input type="text" className="input-box" placeholder="Enter name"
+                            value={loggedInUser}
+                            onChange={(e) => setUserName(e.target.value)} />
+                    </div>
                 </div>
                 <div className="flex flex-wrap">
                     {

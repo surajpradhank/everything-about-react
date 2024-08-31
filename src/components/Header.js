@@ -1,17 +1,18 @@
 // @ts-nocheck
 import { Link } from "react-router-dom";
 import logo from "./../../img/TaskyKitchn.png";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
     let [btnName, setBtnName] = useState("Login")
 
-    useEffect(() => { }, []);
+    const { loggedInUser } = useContext(UserContext)
 
     return (
         <div className="flex justify-between shadow-md">
             <div className="logo-container">
-                <img className="w-28" src={logo} />
+                <Link to="/"><img className="w-28" src={logo} /></Link>
             </div>
             <div className="flex items-center">
                 <ul className="flex p-4 m-4">
@@ -25,6 +26,8 @@ const Header = () => {
                     }}>
                         {btnName}
                     </button>
+                    <li className="nav-li font-bold  hover:text-red-700">{loggedInUser}</li>
+
                 </ul>
             </div>
         </div>
