@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { withHighestRatedLabel } from "./ResturantCard";
 import resturantList from "../utils/mockdata"
 import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constant";
@@ -8,12 +8,16 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus"
 import Footer from "../components/Footer";
 
+
 const Body = () => {
 
     const [listOfRestaurant, setlistOfRestaurant] = useState([]); // for mock data use resturantList from above import
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
 
+    const RestaurantCardHighestRated = withHighestRatedLabel(ResturantCard);
+
+    console.log(listOfRestaurant);
     useEffect(() => {
         fetchData();
     }, []);
@@ -65,8 +69,12 @@ const Body = () => {
                 </div>
                 <div className="flex flex-wrap">
                     {
-                        filteredRestaurant.map((resturant) =>
-                            <Link key={resturant.info.id} to={"/restaurants/" + resturant.info.id}><ResturantCard resData={resturant} /></Link>
+                        filteredRestaurant.map((restaurant) =>
+                            <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+                                {
+                                    restaurant.info.avgRating >= 4.6 ? (<RestaurantCardHighestRated resData={restaurant} />) : (<ResturantCard resData={restaurant} />)
+                                }
+                            </Link>
                         )
                     }
                 </div>

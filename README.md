@@ -87,3 +87,7 @@ On Demand loading
 Dynamic import
 
 This concept is used to split code into smaller chunks which cen be loaded on demand which will improve hte performance in large scale applications
+
+# High Order Components
+It takes component as input and after enhancing it and return the componenet
+
