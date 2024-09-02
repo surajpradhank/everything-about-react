@@ -1,5 +1,5 @@
 import React from "react";
-import { MENU_ITEM_URL } from "../utils/constant";
+import { MENU_ITEM_URL } from "../../utils/constant";
 
 const MenuItemList = ({ items }) => {
     return (
