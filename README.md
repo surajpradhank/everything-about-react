@@ -45,7 +45,7 @@
   
 # Two types of Export/Import
 
-- Defailt Export/Import
+- Default Export/Import
   
   export default componenent
   import component from "path"
@@ -90,4 +90,14 @@ This concept is used to split code into smaller chunks which cen be loaded on de
 
 # High Order Components
 It takes component as input and after enhancing it and return the componenet
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit
+- Install react-redux
+- Build our store
+- Connect our store to our app
+- Slice(Cart SLice)
+- dispatch(action)
+- Selector
 

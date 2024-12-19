@@ -40,7 +40,7 @@ const ResturantCard = (props) => {
     );
 };
 
-// High Order Component
+// Higher Order Component
 // input Restaurant Card => RestaurantCardHighestRated
 
 export const withHighestRatedLabel = (ResturantCard) => {
