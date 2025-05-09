@@ -1,7 +1,16 @@
 import React from "react";
 import { MENU_ITEM_URL } from "../../utils/constant";
-
+import { useDispatch } from "react-redux";
+import { addItem } from "../../utils/slices/cartSlice";
 const MenuItemList = ({ items }) => {
+
+    const dispatch = useDispatch();
+    const handleAddItem = (item) => {
+        // Dispatch an action to add the item to the cart
+        console.log(item)
+        dispatch(addItem(item));
+    }
+
     return (
         <div>
             {items.map((item) => (
@@ -24,7 +33,8 @@ const MenuItemList = ({ items }) => {
                     </div>
                     <div className="py-2 my-2 w-3/12 relative">
                         <div className="absolute bottom-0 mx-auto left-0 right-6">
-                            <button className="p-2 bg-white shadow-lg text-green-500 font-extrabold rounded-lg w-20">ADD</button>
+                            <button className="p-2 bg-white shadow-lg text-green-500 font-extrabold rounded-lg w-20"
+                                onClick={() => handleAddItem(item)}>ADD</button>
                         </div><img
                             src={MENU_ITEM_URL + item.card.info.imageId}
                             className="rounded-lg w-40 h-36"

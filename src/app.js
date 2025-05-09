@@ -12,6 +12,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/cart";
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const Applayout = () => {
@@ -56,7 +57,13 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
-            }],
+            },
+            {
+                path: "/cart",
+                element: <Cart />
+            }
+
+        ],
         errorElement: <Error />
     }
 
@@ -64,4 +71,8 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+    <React.StrictMode>
+        <RouterProvider router={appRouter} />
+    </React.StrictMode>
+);

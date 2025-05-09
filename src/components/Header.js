@@ -22,7 +22,7 @@ const Header = () => {
                     <li className="nav-li"><Link to="/about">About </Link></li>
                     <li className="nav-li"><Link to="/contact">Contant Us</Link></li>
                     <li className="nav-li"><Link to="/grocery">Grocery</Link></li>
-                    <li className="nav-li">Cart - {cartItemsSelector.length} </li>
+                    <li className="nav-li"><Link to="/cart"> Cart - {cartItemsSelector.length} items</Link> </li>
                     <button className="nav-li login" onClick={() => {
                         btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")
                     }}>
